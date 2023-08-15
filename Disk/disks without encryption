@@ -1,3 +1,5 @@
+Are all my disks encrypted with CMK?
+```
 Resources
 | where type =~ 'microsoft.compute/disks'
 // | where properties.timeCreated contains "2023"
@@ -6,3 +8,4 @@ Resources
 // | project properties['uniqueId']
 // | where properties.diskState =~ 'Unattached'
 | project name, location, resourceGroup, subscriptionId, createdTime = todatetime(properties.timeCreated)
+```
